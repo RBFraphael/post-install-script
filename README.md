@@ -114,6 +114,7 @@ Baixa pacotes de software DEB de terceiros e salva no diretório deb_temp:
 - Config. de repositório Microsoft
 - Google Chrome
 - Visual Studio Code
+- libssl1.1 (compatível com Unity3D em Ubuntu 22.04 ou superior)
 - Docker Desktop
 - VirtualBox
 - Draw.io

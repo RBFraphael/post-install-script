@@ -333,6 +333,7 @@ ${C_RESET}"
 wget https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb -P ~/deb_temp/
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P ~/deb_temp/
 wget https://code.visualstudio.com/sha/download?build=stable\&os=linux-deb-x64 -O ~/deb_temp/code.deb
+wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2_amd64.deb -P ~/deb_temp/
 wget $DEB_URL_DOCKER -P ~/deb_temp/
 wget $DEB_URL_VBOX -P ~/deb_temp/
 wget $DEB_URL_DRAWIO -P ~/deb_temp/
