@@ -64,6 +64,7 @@ Instalação dos softwares:
 - Simple Screen Recorder (gravador de tela)
 - Stacer (gerenciador de tarefas)
 - VLC (reprodutor de mídia)
+- FileZilla (cliente FTP)
 - resolvconf (configuração para resolução de endereços DNS)
 - Samba (para compartilhamento em rede)
 - Remmina (para acesso remoto via protocolo RDP)
@@ -88,7 +89,6 @@ Instalação dos aplicativos abaixo, em formato Flatpak:
 - Postman
 - Meld
 - DB Browser for SQLite
-- FileZilla
 
 ### :one::eight: __- Parte 18__
 Cria os seguintes diretórios adicionais na pasta do usuário:
