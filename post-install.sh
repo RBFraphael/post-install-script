@@ -45,6 +45,7 @@ sudo add-apt-repository ppa:ondrej/php -y
 sudo add-apt-repository ppa:chrdevs/figma -y
 sudo add-apt-repository ppa:libreoffice/ppa -y
 sudo add-apt-repository ppa:papirus/papirus -y
+sudo add-apt-repository ppa:xtradeb/apps -y
 
 
 
@@ -182,7 +183,7 @@ echo -e "${C_YELLOW}\
 ----------------------------------------------- \n \
 ${C_RESET}"
 # Install other applications
-sudo apt-get install antimicro cpu-x okular cheese figma-linux papirus-icon-theme hardinfo simplescreenrecorder stacer vlc resolvconf samba smbclient remmina remmina-plugin-rdp remmina-plugin-vnc ttf-* fonts-* -y
+sudo apt-get install antimicro cpu-x okular cheese figma-linux papirus-icon-theme hardinfo simplescreenrecorder stacer vlc resolvconf filezilla filezilla-theme-papirus samba smbclient remmina remmina-plugin-rdp remmina-plugin-vnc ttf-* fonts-* -y
 
 
 
@@ -214,7 +215,6 @@ flatpak install flathub com.valvesoftware.Steam -y
 flatpak install flathub com.getpostman.Postman -y
 flatpak install flathub org.gnome.meld -y
 flatpak install flathub org.sqlitebrowser.sqlitebrowser -y
-flatpak install flathub org.filezillaproject.Filezilla -y
 
 
 
