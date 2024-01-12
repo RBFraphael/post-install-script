@@ -472,6 +472,7 @@ ${C_RESET}"
 wget https://cinnamon-spices.linuxmint.com/files/applets/hwmonitor@sylfurd.zip -O ~/.local/share/cinnamon/applets/hwmonitor@sylfurd.zip
 unzip ~/.local/share/cinnamon/applets/hwmonitor@sylfurd.zip -d ~/.local/share/cinnamon/applets/
 rm ~/.local/share/cinnamon/applets/hwmonitor@sylfurd.zip
+mkdir ~/.themes
 wget https://github.com/dracula/gtk/archive/refs/heads/master.zip -O ~/.themes/Dracula.zip
 unzip ~/.themes/Dracula.zip -d ~/.themes
 mv ~/.themes/gtk-master ~/.themes/Dracula
