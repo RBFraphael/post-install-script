@@ -2,8 +2,8 @@
 
 # DEB Packages URLs - CHANGE TO LATEST BEFORE RUN
 
-DEB_URL_DOCKER="https://desktop.docker.com/linux/main/amd64/docker-desktop-4.19.0-amd64.deb"
-DEB_URL_VBOX="https://download.virtualbox.org/virtualbox/7.0.8/virtualbox-7.0_7.0.8-156879~Ubuntu~jammy_amd64.deb"
+DEB_URL_DOCKER="https://desktop.docker.com/linux/main/amd64/docker-desktop-4.26.1-amd64.deb"
+DEB_URL_VBOX="https://download.virtualbox.org/virtualbox/7.0.12/virtualbox-7.0_7.0.12-159484~Ubuntu~jammy_amd64.deb"
 DEB_URL_DRAWIO="https://github.com/jgraph/drawio-desktop/releases/download/v21.2.8/drawio-amd64-21.2.8.deb"
 
 # That's it! Stop editing (unless you know what you're doing and it's risks)
@@ -122,17 +122,18 @@ sudo apt-get dist-upgrade -y
 
 echo -e "${C_YELLOW}\
 ----------------------------------------------- \n \
-## 10. Install Apache, PHP (5.6, 7.0, 7.2, 7.4, 8.0 and 8.2) and MariaDB \n \
+## 10. Install Apache, PHP (5.6, 7.0, 7.2, 7.4, 8.0, 8.2 and 8.3) and MariaDB \n \
 ----------------------------------------------- \n \
 ${C_RESET}"
 # Install Web Server
-sudo apt-get install apache2 \
-        libapache2-mod-php5.6 php5.6 php5.6-bz2 php5.6-curl php5.6-gd php5.6-geoip php5.6-http php5.6-imap php5.6-intl php5.6-json php5.6-ldap php5.6-mbstring php5.6-mongodb php5.6-mysql php5.6-pgsql php5.6-raphf php5.6-redis php5.6-smbclient php5.6-soap php5.6-sqlite3 php5.6-uploadprogress php5.6-xdebug php5.6-xml php5.6-yaml php5.6-zip \
-        libapache2-mod-php7.0 php7.0 php7.0-bz2 php7.0-curl php7.0-gd php7.0-geoip php7.0-http php7.0-imap php7.0-intl php7.0-json php7.0-ldap php7.0-mbstring php7.0-mongodb php7.0-mysql php7.0-pgsql php7.0-raphf php7.0-redis php7.0-smbclient php7.0-soap php7.0-sqlite3 php7.0-uploadprogress php7.0-xdebug php7.0-xml php7.0-yaml php7.0-zip \
-        libapache2-mod-php7.2 php7.2 php7.2-bz2 php7.2-curl php7.2-gd php7.2-geoip php7.2-http php7.2-imap php7.2-intl php7.2-json php7.2-ldap php7.2-mbstring php7.2-mongodb php7.2-mysql php7.2-pgsql php7.2-raphf php7.2-redis php7.2-smbclient php7.2-soap php7.2-sqlite3 php7.2-uploadprogress php7.2-xdebug php7.2-xml php7.2-yaml php7.2-zip \
-        libapache2-mod-php7.4 php7.4 php7.4-bz2 php7.4-curl php7.4-gd php7.4-geoip php7.4-http php7.4-imap php7.4-intl php7.4-json php7.4-ldap php7.4-mbstring php7.4-mongodb php7.4-mysql php7.4-pgsql php7.4-raphf php7.4-redis php7.4-smbclient php7.4-soap php7.4-sqlite3 php7.4-uploadprogress php7.4-xdebug php7.4-xml php7.4-yaml php7.4-zip \
-        libapache2-mod-php8.0 php8.0 php8.0-bz2 php8.0-curl php8.0-gd php8.0-http php8.0-imap php8.0-intl php8.0-ldap php8.0-mbstring php8.0-mongodb php8.0-mysql php8.0-pgsql php8.0-raphf php8.0-redis php8.0-smbclient php8.0-soap php8.0-sqlite3 php8.0-uploadprogress php8.0-xdebug php8.0-xml php8.0-yaml php8.0-zip \
-        libapache2-mod-php8.2 php8.2 php8.2-bz2 php8.2-curl php8.2-gd php8.2-http php8.2-imap php8.2-intl php8.2-ldap php8.2-mbstring php8.2-mongodb php8.2-mysql php8.2-pgsql php8.2-raphf php8.2-redis php8.2-smbclient php8.2-soap php8.2-sqlite3 php8.2-uploadprogress php8.2-xdebug php8.2-xml php8.2-yaml php8.2-zip \
+sudo apt-get install apache2 libapache2-mod-fcgid \
+        php5.6-fpm php5.6-bz2 php5.6-curl php5.6-gd php5.6-geoip php5.6-http php5.6-imap php5.6-intl php5.6-json php5.6-ldap php5.6-mbstring php5.6-mongodb php5.6-mysql php5.6-pgsql php5.6-raphf php5.6-redis php5.6-smbclient php5.6-soap php5.6-sqlite3 php5.6-uploadprogress php5.6-xdebug php5.6-xml php5.6-yaml php5.6-zip \
+        php7.0-fpm php7.0-bz2 php7.0-curl php7.0-gd php7.0-geoip php7.0-http php7.0-imap php7.0-intl php7.0-json php7.0-ldap php7.0-mbstring php7.0-mongodb php7.0-mysql php7.0-pgsql php7.0-raphf php7.0-redis php7.0-smbclient php7.0-soap php7.0-sqlite3 php7.0-uploadprogress php7.0-xdebug php7.0-xml php7.0-yaml php7.0-zip \
+        php7.2-fpm php7.2-bz2 php7.2-curl php7.2-gd php7.2-geoip php7.2-http php7.2-imap php7.2-intl php7.2-json php7.2-ldap php7.2-mbstring php7.2-mongodb php7.2-mysql php7.2-pgsql php7.2-raphf php7.2-redis php7.2-smbclient php7.2-soap php7.2-sqlite3 php7.2-uploadprogress php7.2-xdebug php7.2-xml php7.2-yaml php7.2-zip \
+        php7.4-fpm php7.4-bz2 php7.4-curl php7.4-gd php7.4-geoip php7.4-http php7.4-imap php7.4-intl php7.4-json php7.4-ldap php7.4-mbstring php7.4-mongodb php7.4-mysql php7.4-pgsql php7.4-raphf php7.4-redis php7.4-smbclient php7.4-soap php7.4-sqlite3 php7.4-uploadprogress php7.4-xdebug php7.4-xml php7.4-yaml php7.4-zip \
+        php8.0-fpm php8.0-bz2 php8.0-curl php8.0-gd php8.0-http php8.0-imap php8.0-intl php8.0-ldap php8.0-mbstring php8.0-mongodb php8.0-mysql php8.0-pgsql php8.0-raphf php8.0-redis php8.0-smbclient php8.0-soap php8.0-sqlite3 php8.0-uploadprogress php8.0-xdebug php8.0-xml php8.0-yaml php8.0-zip \
+        php8.2-fpm php8.2-bz2 php8.2-curl php8.2-gd php8.2-http php8.2-imap php8.2-intl php8.2-ldap php8.2-mbstring php8.2-mongodb php8.2-mysql php8.2-pgsql php8.2-raphf php8.2-redis php8.2-smbclient php8.2-soap php8.2-sqlite3 php8.2-uploadprogress php8.2-xdebug php8.2-xml php8.2-yaml php8.2-zip \
+        php8.3-fpm php8.3-bz2 php8.3-curl php8.3-gd php8.3-http php8.3-imap php8.3-intl php8.3-ldap php8.3-mbstring php8.3-mongodb php8.3-mysql php8.3-pgsql php8.3-raphf php8.3-redis php8.3-smbclient php8.3-soap php8.3-sqlite3 php8.3-uploadprogress php8.3-xdebug php8.3-xml php8.3-yaml php8.3-zip \
         mariadb-server -y
 
 
@@ -230,7 +231,7 @@ mkdir ~/Projects
 mkdir ~/Git
 mkdir ~/Web
 mkdir ~/deb_temp
-
+mkdir ~/.themes
 
 
 echo -e "${C_YELLOW}\
@@ -240,9 +241,37 @@ echo -e "${C_YELLOW}\
 ${C_RESET}"
 # Setup Apache
 sudo a2dismod php*
-sudo a2enmod alias vhost_alias headers rewrite ssl php8.2
+sudo a2enmod alias vhost_alias headers rewrite ssl fcgid proxy_fcgi
+sudo a2enconf php5.6-fpm php7.0-fpm php7.2-fpm php7.4-fpm php8.0-fpm php8.2-fpm php8.3-fpm
 sudo service apache2 restart
+
 echo -e "\
+export PHP56=\"proxy:unix:/run/php/php5.6-fpm.sock|fcgi://localhost\" \n \
+export PHP70=\"proxy:unix:/run/php/php7.0-fpm.sock|fcgi://localhost\" \n \
+export PHP72=\"proxy:unix:/run/php/php7.2-fpm.sock|fcgi://localhost\" \n \
+export PHP74=\"proxy:unix:/run/php/php7.4-fpm.sock|fcgi://localhost\" \n \
+export PHP80=\"proxy:unix:/run/php/php8.0-fpm.sock|fcgi://localhost\" \n \
+export PHP82=\"proxy:unix:/run/php/php8.2-fpm.sock|fcgi://localhost\" \n \
+export PHP83=\"proxy:unix:/run/php/php8.3-fpm.sock|fcgi://localhost\" \n \
+" | sudo tee -a /etc/apache2/envvars > /dev/null
+
+sudo sed -i "s/www-data/$USER/g" /etc/apache2/envvars
+
+sudo sed -i "s/www-data/$USER/g" /etc/php/5.6/fpm/pool.d/www.conf
+sudo sed -i "s/www-data/$USER/g" /etc/php/7.0/fpm/pool.d/www.conf
+sudo sed -i "s/www-data/$USER/g" /etc/php/7.2/fpm/pool.d/www.conf
+sudo sed -i "s/www-data/$USER/g" /etc/php/7.4/fpm/pool.d/www.conf
+sudo sed -i "s/www-data/$USER/g" /etc/php/8.0/fpm/pool.d/www.conf
+sudo sed -i "s/www-data/$USER/g" /etc/php/8.2/fpm/pool.d/www.conf
+sudo sed -i "s/www-data/$USER/g" /etc/php/8.3/fpm/pool.d/www.conf
+
+echo -e "\
+<FilesMatch \\.php$>
+    SetHandler \${PHP83}
+</FilesMatch>
+
+AccessFileName .htaccess .phpv
+
 <Directory $HOME/Web> \n \
 	Options Indexes FollowSymLinks \n \
 	AllowOverride All \n \
@@ -274,6 +303,12 @@ echo -e "\
 </VirtualHost> \n \
 " | sudo tee /etc/apache2/sites-available/localhost.conf > /dev/null
 echo -e "\
+<FilesMatch \\.php$>
+    SetHandler \${PHP83}
+</FilesMatch>
+
+AccessFileName .htaccess .phpv
+
 <Directory /home/raphael/Web> \n \
 	Options Indexes FollowSymLinks \n \
 	AllowOverride All \n \
@@ -316,12 +351,33 @@ echo -e "\
     CustomLog ${APACHE_LOG_DIR}/access-ssl.log combined \n \
 </VirtualHost> \n \
 " | sudo tee /etc/apache2/sites-available/localhost-ssl.conf > /dev/null
-sudo sed -i "s/www-data/$USER/g" /etc/apache2/envvars
+
 sudo a2dissite 000-default
 sudo a2ensite localhost
 sudo a2ensite localhost-ssl
+
 sudo service apache2 restart
 
+sudo service php5.6-fpm reload
+sudo service php5.6-fpm restart
+
+sudo service php7.0-fpm reload
+sudo service php7.0-fpm restart
+
+sudo service php7.2-fpm reload
+sudo service php7.2-fpm restart
+
+sudo service php7.4-fpm reload
+sudo service php7.4-fpm restart
+
+sudo service php8.0-fpm reload
+sudo service php8.0-fpm restart
+
+sudo service php8.2-fpm reload
+sudo service php8.2-fpm restart
+
+sudo service php8.3-fpm reload
+sudo service php8.3-fpm restart
 
 
 echo -e "${C_YELLOW}\
@@ -369,20 +425,23 @@ echo -e "${C_YELLOW}\
 ----------------------------------------------- \n \
 ${C_RESET}"
 # Download Composer
-wget https://getcomposer.org/download/latest-stable/composer.phar -O ~/Applications/composer.2.x.phar
-wget https://getcomposer.org/download/latest-1.x/composer.phar -O ~/Applications/composer.1.x.phar
+wget https://getcomposer.org/download/latest-stable/composer.phar -O ~/Applications/composer
+wget https://getcomposer.org/download/latest-1.x/composer.phar -O ~/Applications/composer1
 
 
 
 echo -e "${C_YELLOW}\
 ----------------------------------------------- \n \
-## 24. Setup Composer aliases \n \
+## 24. Setup aliases \n \
 ----------------------------------------------- \n \
 ${C_RESET}"
 # Setup Composer aliases
 touch ~/.bash_aliases
-echo "alias composer='php ~/Applications/composer-2.x.phar'" >> ~/.bash_aliases
-echo "alias composer1='php ~/Applications/composer-1.x.phar'" >> ~/.bash_aliases
+echo "alias cu='composer update'" >> ~/.bash_aliases
+echo "alias cr='composer require'" >> ~/.bash_aliases
+echo "alias ci='composer install'" >> ~/.bash_aliases
+echo "alias pa='php artisan'" >> ~/.bash_aliases
+echo "alias ni='npm install'" >> ~/.bash_aliases
 
 
 
@@ -472,11 +531,12 @@ ${C_RESET}"
 wget https://cinnamon-spices.linuxmint.com/files/applets/hwmonitor@sylfurd.zip -O ~/.local/share/cinnamon/applets/hwmonitor@sylfurd.zip
 unzip ~/.local/share/cinnamon/applets/hwmonitor@sylfurd.zip -d ~/.local/share/cinnamon/applets/
 rm ~/.local/share/cinnamon/applets/hwmonitor@sylfurd.zip
-mkdir ~/.themes
+
 wget https://github.com/dracula/gtk/archive/refs/heads/master.zip -O ~/.themes/Dracula.zip
 unzip ~/.themes/Dracula.zip -d ~/.themes
 mv ~/.themes/gtk-master ~/.themes/Dracula
 rm ~/.themes/Dracula.zip
+
 wget https://github.com/dracula/gtk/archive/refs/heads/alt-style.zip -O ~/.themes/Dracula-alt-style.zip
 unzip ~/.themes/Dracula-alt-style.zip -d ~/.themes
 mv ~/.themes/gtk-alt-style ~/.themes/Dracula-alt-style
