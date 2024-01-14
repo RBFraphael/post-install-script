@@ -432,16 +432,17 @@ wget https://getcomposer.org/download/latest-1.x/composer.phar -O ~/Applications
 
 echo -e "${C_YELLOW}\
 ----------------------------------------------- \n \
-## 24. Setup aliases \n \
+## 24. Setup aliases and symlinks \n \
 ----------------------------------------------- \n \
 ${C_RESET}"
-# Setup Composer aliases
+# Setup aliases and symlinks
 touch ~/.bash_aliases
 echo "alias cu='composer update'" >> ~/.bash_aliases
 echo "alias cr='composer require'" >> ~/.bash_aliases
 echo "alias ci='composer install'" >> ~/.bash_aliases
 echo "alias pa='php artisan'" >> ~/.bash_aliases
 echo "alias ni='npm install'" >> ~/.bash_aliases
+ln -s /usr/bin/gnome-calculator ~/bin/calc
 
 
 
