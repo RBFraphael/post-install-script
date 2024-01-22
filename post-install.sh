@@ -3,8 +3,8 @@
 # DEB Packages URLs - CHANGE TO LATEST BEFORE RUN
 
 DEB_URL_DOCKER="https://desktop.docker.com/linux/main/amd64/docker-desktop-4.26.1-amd64.deb"
-DEB_URL_VBOX="https://download.virtualbox.org/virtualbox/7.0.12/virtualbox-7.0_7.0.12-159484~Ubuntu~jammy_amd64.deb"
-DEB_URL_DRAWIO="https://github.com/jgraph/drawio-desktop/releases/download/v21.2.8/drawio-amd64-21.2.8.deb"
+DEB_URL_VBOX="https://download.virtualbox.org/virtualbox/7.0.14/virtualbox-7.0_7.0.14-161095~Ubuntu~jammy_amd64.deb"
+DEB_URL_DRAWIO="https://github.com/jgraph/drawio-desktop/releases/download/v22.1.21/drawio-amd64-22.1.21.deb"
 
 # That's it! Stop editing (unless you know what you're doing and it's risks)
 

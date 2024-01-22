@@ -5,7 +5,7 @@ Este é meu script pessoal de pós-instalação, para ser usado após a formata�
 Antes de executar o script, é necessário definir as URLs dos pacotes DEB para o Docker Desktop, VirtualBox e Draw.io nas variáveis definidas no início do script, para que sejam instaladas as últimas versões desses softwares. Você pode obter os links das últimas versões dos pacotes DEB nos seguintes locais:
 - [Docker Desktop](https://docs.docker.com/desktop/install/ubuntu/)
 - [VirtualBox](https://www.virtualbox.org/wiki/Linux_Downloads)
-- [Draw.io](https://github.com/jgraph/drawio-desktop/releases/tag/v21.2.8)
+- [Draw.io](https://github.com/jgraph/drawio-desktop/releases/latest)
 
 ## :green_book: __Documentação__
 Documentada, em ordem de execução, as etapas do script.
