@@ -216,6 +216,9 @@ flatpak install flathub com.valvesoftware.Steam -y
 flatpak install flathub com.getpostman.Postman -y
 flatpak install flathub org.gnome.meld -y
 flatpak install flathub org.sqlitebrowser.sqlitebrowser -y
+flatpak install flathub org.telegram.desktop -y
+flatpak install flathub com.discordapp.Discord -y
+flatpak install flathub com.github.IsmaelMartinez.teams_for_linux -y
 
 
 
