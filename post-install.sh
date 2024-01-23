@@ -220,6 +220,7 @@ flatpak install flathub org.telegram.desktop -y
 flatpak install flathub com.discordapp.Discord -y
 flatpak install flathub com.github.IsmaelMartinez.teams_for_linux -y
 flatpak install flathub com.todoist.Todoist -y
+flatpak install flathub com.authy.Authy -y
 
 
 
