@@ -42,7 +42,6 @@ ${C_RESET}"
 # Add repositories
 sudo add-apt-repository ppa:ondrej/apache2 -y
 sudo add-apt-repository ppa:ondrej/php -y
-sudo add-apt-repository ppa:chrdevs/figma -y
 sudo add-apt-repository ppa:libreoffice/ppa -y
 sudo add-apt-repository ppa:papirus/papirus -y
 sudo add-apt-repository ppa:xtradeb/apps -y
@@ -184,7 +183,7 @@ echo -e "${C_YELLOW}\
 ----------------------------------------------- \n \
 ${C_RESET}"
 # Install other applications
-sudo apt-get install antimicro cpu-x okular cheese figma-linux papirus-icon-theme hardinfo simplescreenrecorder stacer vlc resolvconf filezilla filezilla-theme-papirus samba smbclient remmina remmina-plugin-rdp remmina-plugin-vnc ttf-* fonts-* -y
+sudo apt-get install antimicro cpu-x okular cheese papirus-icon-theme hardinfo simplescreenrecorder stacer vlc resolvconf filezilla filezilla-theme-papirus samba smbclient remmina remmina-plugin-rdp remmina-plugin-vnc ttf-* fonts-* -y
 
 
 
@@ -222,7 +221,7 @@ flatpak install flathub com.github.IsmaelMartinez.teams_for_linux -y
 flatpak install flathub com.todoist.Todoist -y
 flatpak install flathub com.authy.Authy -y
 flatpak install flathub org.flameshot.Flameshot -y
-
+flatpak install flathub io.github.Figma_Linux.figma_linux -y
 
 
 echo -e "${C_YELLOW}\
