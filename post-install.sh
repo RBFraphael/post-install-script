@@ -395,6 +395,7 @@ wget https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P ~/deb_temp/
 wget https://code.visualstudio.com/sha/download?build=stable\&os=linux-deb-x64 -O ~/deb_temp/code.deb
 wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2_amd64.deb -P ~/deb_temp/
+wget "https://go.microsoft.com/fwlink?linkid=2149051&brand=M102" -O ~/deb_temp/edge.deb
 wget $DEB_URL_DOCKER -P ~/deb_temp/
 wget $DEB_URL_VBOX -P ~/deb_temp/
 wget $DEB_URL_DRAWIO -P ~/deb_temp/
@@ -447,6 +448,10 @@ echo "alias cr='composer require'" >> ~/.bash_aliases
 echo "alias ci='composer install'" >> ~/.bash_aliases
 echo "alias pa='php artisan'" >> ~/.bash_aliases
 echo "alias ni='npm install'" >> ~/.bash_aliases
+echo "alias gc='git clone'" >> ~/.bash_aliases
+echo "alias gf='git fetch'" >> ~/.bash_aliases
+echo "alias gp='git pull'" >> ~/.bash_aliases
+echo "alias gfp='git fetch && git pull'" >> ~/.bash_aliases
 ln -s /usr/bin/gnome-calculator ~/bin/calc
 
 
