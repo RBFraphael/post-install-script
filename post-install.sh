@@ -5,6 +5,7 @@
 DEB_URL_DOCKER="https://desktop.docker.com/linux/main/amd64/docker-desktop-4.26.1-amd64.deb"
 DEB_URL_VBOX="https://download.virtualbox.org/virtualbox/7.0.14/virtualbox-7.0_7.0.14-161095~Ubuntu~jammy_amd64.deb"
 DEB_URL_DRAWIO="https://github.com/jgraph/drawio-desktop/releases/download/v22.1.21/drawio-amd64-22.1.21.deb"
+ANDROID_STUDIO_PACKAGE="https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2023.1.1.28/android-studio-2023.1.1.28-linux.tar.gz"
 
 # That's it! Stop editing (unless you know what you're doing and it's risks)
 
@@ -183,7 +184,7 @@ echo -e "${C_YELLOW}\
 ----------------------------------------------- \n \
 ${C_RESET}"
 # Install other applications
-sudo apt-get install antimicro cpu-x okular cheese papirus-icon-theme hardinfo simplescreenrecorder stacer vlc resolvconf filezilla filezilla-theme-papirus samba smbclient remmina remmina-plugin-rdp remmina-plugin-vnc ttf-* fonts-* -y
+sudo apt-get install antimicro cpu-x okular cheese papirus-icon-theme hardinfo simplescreenrecorder stacer vlc resolvconf filezilla filezilla-theme-papirus samba smbclient remmina remmina-plugin-rdp remmina-plugin-vnc ttf-* fonts-* dconf-editor -y
 
 
 
@@ -269,6 +270,34 @@ sudo sed -i "s/www-data/$USER/g" /etc/php/7.4/fpm/pool.d/www.conf
 sudo sed -i "s/www-data/$USER/g" /etc/php/8.0/fpm/pool.d/www.conf
 sudo sed -i "s/www-data/$USER/g" /etc/php/8.2/fpm/pool.d/www.conf
 sudo sed -i "s/www-data/$USER/g" /etc/php/8.3/fpm/pool.d/www.conf
+
+sudo sed -i "s/upload_max_filesize = 2M/upload_max_filesize = 10G/g" /etc/php/5.6/fpm/php.ini
+sudo sed -i "s/post_max_size = 8M/post_max_size = 10G/g" /etc/php/5.6/fpm/php.ini
+sudo sed -i "s/max_execution_time = 30/max_execution_time = 300/g" /etc/php/5.6/fpm/php.ini
+
+sudo sed -i "s/upload_max_filesize = 2M/upload_max_filesize = 10G/g" /etc/php/7.0/fpm/php.ini
+sudo sed -i "s/post_max_size = 8M/post_max_size = 10G/g" /etc/php/7.0/fpm/php.ini
+sudo sed -i "s/max_execution_time = 30/max_execution_time = 300/g" /etc/php/7.0/fpm/php.ini
+
+sudo sed -i "s/upload_max_filesize = 2M/upload_max_filesize = 10G/g" /etc/php/7.2/fpm/php.ini
+sudo sed -i "s/post_max_size = 8M/post_max_size = 10G/g" /etc/php/7.2/fpm/php.ini
+sudo sed -i "s/max_execution_time = 30/max_execution_time = 300/g" /etc/php/7.2/fpm/php.ini
+
+sudo sed -i "s/upload_max_filesize = 2M/upload_max_filesize = 10G/g" /etc/php/7.4/fpm/php.ini
+sudo sed -i "s/post_max_size = 8M/post_max_size = 10G/g" /etc/php/7.4/fpm/php.ini
+sudo sed -i "s/max_execution_time = 30/max_execution_time = 300/g" /etc/php/7.4/fpm/php.ini
+
+sudo sed -i "s/upload_max_filesize = 2M/upload_max_filesize = 10G/g" /etc/php/8.0/fpm/php.ini
+sudo sed -i "s/post_max_size = 8M/post_max_size = 10G/g" /etc/php/8.0/fpm/php.ini
+sudo sed -i "s/max_execution_time = 30/max_execution_time = 300/g" /etc/php/8.0/fpm/php.ini
+
+sudo sed -i "s/upload_max_filesize = 2M/upload_max_filesize = 10G/g" /etc/php/8.2/fpm/php.ini
+sudo sed -i "s/post_max_size = 8M/post_max_size = 10G/g" /etc/php/8.2/fpm/php.ini
+sudo sed -i "s/max_execution_time = 30/max_execution_time = 300/g" /etc/php/8.2/fpm/php.ini
+
+sudo sed -i "s/upload_max_filesize = 2M/upload_max_filesize = 10G/g" /etc/php/8.3/fpm/php.ini
+sudo sed -i "s/post_max_size = 8M/post_max_size = 10G/g" /etc/php/8.3/fpm/php.ini
+sudo sed -i "s/max_execution_time = 30/max_execution_time = 300/g" /etc/php/8.3/fpm/php.ini
 
 echo -e "\
 <FilesMatch \\.php$>
@@ -385,6 +414,28 @@ sudo service php8.3-fpm reload
 sudo service php8.3-fpm restart
 
 
+
+echo -e "${C_YELLOW}\
+----------------------------------------------- \n \
+## 19.1. Install phpMyAdmin \n \
+----------------------------------------------- \n \
+${C_RESET}"
+# Install phpMyAdmin
+wget https://files.phpmyadmin.net/phpMyAdmin/5.2.1/phpMyAdmin-5.2.1-english.zip -O ~/Web/phpMyAdmin.zip
+unzip ~/Web/phpMyAdmin.zip -d ~/Web
+rm ~/Web/phpMyAdmin.zip
+mv ~/Web/phpMyAdmin-5.2.1-english ~/Web/phpmyadmin
+ln -s ~/Web/phpmyadmin ~/Web/pma
+echo -e "\
+<?php \n \
+\$cfg['blowfish_secret'] = '$(uuidgen)'; \n \
+\$cfg['Servers'][1]['auth_type'] = 'config'; \n \
+\$cfg['Servers'][1]['user'] = '$USER'; \n \
+\$cfg['Servers'][1]['AllowNoPassword'] = true; \n \
+" | tee ~/Web/phpmyadmin/config.inc.php > /dev/null
+
+
+
 echo -e "${C_YELLOW}\
 ----------------------------------------------- \n \
 ## 20. Download Third-party DEB packages \n \
@@ -431,8 +482,10 @@ echo -e "${C_YELLOW}\
 ----------------------------------------------- \n \
 ${C_RESET}"
 # Download Composer
-wget https://getcomposer.org/download/latest-stable/composer.phar -O ~/Applications/composer
-wget https://getcomposer.org/download/latest-1.x/composer.phar -O ~/Applications/composer1
+wget https://getcomposer.org/download/latest-stable/composer.phar -O ~/bin/composer
+wget https://getcomposer.org/download/latest-1.x/composer.phar -O ~/bin/composer1
+chmod +x ~/bin/composer
+chmod +x ~/bin/composer1
 
 
 
@@ -453,24 +506,6 @@ echo "alias gf='git fetch'" >> ~/.bash_aliases
 echo "alias gp='git pull'" >> ~/.bash_aliases
 echo "alias gfp='git fetch && git pull'" >> ~/.bash_aliases
 ln -s /usr/bin/gnome-calculator ~/bin/calc
-
-
-
-echo -e "${C_YELLOW}\
------------------------------------------------ \n \
-## 25. Add custom a2chphp script \n \
------------------------------------------------ \n \
-${C_RESET}"
-# Add custom a2chphp script
-echo "#!/bin/bash" >> ~/bin/a2chphp
-echo "if [ \$# -lt 1 ]; then" >> ~/bin/a2chphp
-echo "    echo \"Usage: a2chphp <version>\"" >> ~/bin/a2chphp
-echo "else" >> ~/bin/a2chphp
-echo "    sudo a2dismod php*" >> ~/bin/a2chphp
-echo "    sudo a2enmod php\$1" >> ~/bin/a2chphp
-echo "    sudo service apache2 restart" >> ~/bin/a2chphp
-echo "fi" >> ~/bin/a2chphp
-chmod +x ~/bin/a2chphp
 
 
 
@@ -561,6 +596,7 @@ echo -e "${C_YELLOW}\
 ----------------------------------------------- \n \
 ${C_RESET}"
 # Apply initial desktop customizations
+cp ./wallpaper.jpg $HOME/wallpaper.jpg
 gsettings set org.cinnamon.theme name "Dracula-alt-style"
 gsettings set org.cinnamon.desktop.interface gtk-theme "Dracula-alt-style"
 gsettings set org.cinnamon.desktop.interface icon-theme "Papirus-Dark"
@@ -568,7 +604,7 @@ gsettings set org.cinnamon.desktop.wm.preferences button-layout "close,minimize,
 gsettings set org.cinnamon.desktop.wm.preferences theme "Dracula-alt-style"
 gsettings set org.cinnamon.desktop.wm.preferences mouse-button-modifier ""
 gsettings set org.cinnamon.desktop.background picture-options "zoom"
-gsettings set org.cinnamon.desktop.background picture-uri "file:///usr/share/backgrounds/linuxmint-vera/pfore_mount_baker.jpg"
+gsettings set org.cinnamon.desktop.background picture-uri "file://$HOME/wallpaper.jpg"
 gsettings set org.cinnamon panels-enabled "['1:0:top', '2:0:bottom']"
 gsettings set org.cinnamon panels-height "['1:28', '2:40']"
 gsettings set org.cinnamon panel-zone-icon-sizes "[{\"panelId\": 1, \"left\": 16, \"center\": 16, \"right\": 16}, {\"left\": 16, \"center\": 24, \"right\": 16, \"panelId\": 2}]"
@@ -580,7 +616,15 @@ gsettings set org.cinnamon.desktop.keybindings looking-glass-keybinding "[]"
 gsettings set org.cinnamon.desktop.keybindings.wm panel-run-dialog "['<Super>r']"
 gsettings set org.cinnamon.desktop.keybindings.media-keys screensaver "['<Super>l', 'XF86ScreenSaver']"
 gsettings set org.cinnamon window-effect-speed "0"
+gsettings set org.cinnamon.sounds notification-file '/usr/share/mint-artwork/sounds/map.oga'
+gsettings set org.cinnamon.sounds switch-enabled false
+gsettings set org.cinnamon.sounds tile-enabled false
 
+gsettings set org.cinnamon.desktop.keybindings.media-keys screenshot "[]"
+gsettings set org.cinnamon.desktop.keybindings custom-list "['__dummy__', 'custom0']"
+dconf write /org/cinnamon/desktop/keybindings/custom-keybindings/custom0/binding "['Print']"
+dconf write /org/cinnamon/desktop/keybindings/custom-keybindings/custom0/command "'flatpak run org.flameshot.Flameshot gui'"
+dconf write /org/cinnamon/desktop/keybindings/custom-keybindings/custom0/name "'Take Screenshot (Flameshot)'"
 
 
 echo -e "${C_YELLOW}\
@@ -624,6 +668,21 @@ echo -e "${C_YELLOW}\
 ${C_RESET}"
 # Add user to Samba
 sudo mysql_secure_installation
+sudo mysql --execute="CREATE USER $USER;"
+sudo mysql --execute="GRANT ALL PRIVILEGES ON *.* TO $USER;"
+sudo mysql --execute="FLUSH PRIVILEGES;"
+
+
+
+echo -e "${C_YELLOW}\
+----------------------------------------------- \n \
+## 34. Install Android Studio \n \
+----------------------------------------------- \n \
+${C_RESET}"
+# Install Android Studio
+wget $ANDROID_STUDIO_PACKAGE -O ~/Applications/android-studio.tar.gz
+tar -xvf ~/Applications/android-studio.tar.gz -C ~/Applications
+rm ~/Applications/android-studio.tar.gz
 
 
 
