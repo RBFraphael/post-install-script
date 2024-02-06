@@ -514,6 +514,7 @@ echo "alias cr='composer require'" >> ~/.bash_aliases
 echo "alias ci='composer install'" >> ~/.bash_aliases
 echo "alias pa='php artisan'" >> ~/.bash_aliases
 echo "alias ni='npm install'" >> ~/.bash_aliases
+echo "alias nr='npm run'" >> ~/.bash_aliases
 echo "alias gc='git clone'" >> ~/.bash_aliases
 echo "alias gf='git fetch'" >> ~/.bash_aliases
 echo "alias gp='git pull'" >> ~/.bash_aliases
