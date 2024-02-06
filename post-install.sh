@@ -7,6 +7,7 @@ DEB_URL_VBOX="https://download.virtualbox.org/virtualbox/7.0.14/virtualbox-7.0_7
 VBOX_EXT_PACK="https://download.virtualbox.org/virtualbox/7.0.14/Oracle_VM_VirtualBox_Extension_Pack-7.0.14.vbox-extpack"
 DEB_URL_DRAWIO="https://github.com/jgraph/drawio-desktop/releases/download/v23.0.2/drawio-amd64-23.0.2.deb"
 ANDROID_STUDIO_PACKAGE="https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2023.1.1.28/android-studio-2023.1.1.28-linux.tar.gz"
+GO_PACKAGE="https://go.dev/dl/go1.21.6.linux-amd64.tar.gz"
 
 # That's it! Stop editing (unless you know what you're doing and it's risks)
 
@@ -697,6 +698,20 @@ ${C_RESET}"
 wget $ANDROID_STUDIO_PACKAGE -O ~/Applications/android-studio.tar.gz
 tar -xvf ~/Applications/android-studio.tar.gz -C ~/Applications
 rm ~/Applications/android-studio.tar.gz
+
+
+
+echo -e "${C_YELLOW}\
+----------------------------------------------- \n \
+## 35. Install Go Lang \n \
+----------------------------------------------- \n \
+${C_RESET}"
+# Install Go Lang
+wget $GO_PACKAGE -O ~/Applications/go.tar.gz
+tar -xvf ~/Applications/go.tar.gz -C ~/Applications
+rm ~/Applications/go.tar.gz
+ln -s ~/Applications/go/bin/go ~/bin/go
+ln -s ~/Applications/go/bin/gofmt ~/bin/gofmt
 
 
 
