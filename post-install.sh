@@ -2,9 +2,10 @@
 
 # DEB Packages URLs - CHANGE TO LATEST BEFORE RUN
 
-DEB_URL_DOCKER="https://desktop.docker.com/linux/main/amd64/docker-desktop-4.26.1-amd64.deb"
+DEB_URL_DOCKER="https://desktop.docker.com/linux/main/amd64/136059/docker-desktop-4.27.1-amd64.deb"
 DEB_URL_VBOX="https://download.virtualbox.org/virtualbox/7.0.14/virtualbox-7.0_7.0.14-161095~Ubuntu~jammy_amd64.deb"
-DEB_URL_DRAWIO="https://github.com/jgraph/drawio-desktop/releases/download/v22.1.21/drawio-amd64-22.1.21.deb"
+VBOX_EXT_PACK="https://download.virtualbox.org/virtualbox/7.0.14/Oracle_VM_VirtualBox_Extension_Pack-7.0.14.vbox-extpack"
+DEB_URL_DRAWIO="https://github.com/jgraph/drawio-desktop/releases/download/v23.0.2/drawio-amd64-23.0.2.deb"
 ANDROID_STUDIO_PACKAGE="https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2023.1.1.28/android-studio-2023.1.1.28-linux.tar.gz"
 
 # That's it! Stop editing (unless you know what you're doing and it's risks)
@@ -184,7 +185,7 @@ echo -e "${C_YELLOW}\
 ----------------------------------------------- \n \
 ${C_RESET}"
 # Install other applications
-sudo apt-get install antimicro cpu-x okular cheese papirus-icon-theme hardinfo simplescreenrecorder stacer vlc resolvconf filezilla filezilla-theme-papirus samba smbclient remmina remmina-plugin-rdp remmina-plugin-vnc ttf-* fonts-* dconf-editor -y
+sudo apt-get install antimicro cpu-x okular cheese papirus-icon-theme hardinfo simplescreenrecorder stacer vlc resolvconf filezilla filezilla-theme-papirus samba smbclient remmina remmina-plugin-rdp remmina-plugin-vnc ttf-* fonts-* dconf-editor openssh-server -y
 
 
 
@@ -194,7 +195,7 @@ echo -e "${C_YELLOW}\
 ----------------------------------------------- \n \
 ${C_RESET}"
 # Install NVM
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
 
 
 
@@ -450,6 +451,7 @@ wget "https://go.microsoft.com/fwlink?linkid=2149051&brand=M102" -O ~/deb_temp/e
 wget $DEB_URL_DOCKER -P ~/deb_temp/
 wget $DEB_URL_VBOX -P ~/deb_temp/
 wget $DEB_URL_DRAWIO -P ~/deb_temp/
+wget $VBOX_EXT_PACK -O ~/Oracle_VM_VirtualBox_Extension_Pack.vbox-extpack
 
 
 
@@ -462,6 +464,17 @@ ${C_RESET}"
 sudo dpkg -i ~/deb_temp/*.deb
 sudo apt-get install -f -y
 rm -rf ~/deb_temp
+
+
+
+echo -e "${C_YELLOW}\
+----------------------------------------------- \n \
+## 21. Install VirtualBox Extension Pack \n \
+----------------------------------------------- \n \
+${C_RESET}"
+# Install VirtualBox Extension Pack
+sudo vboxmanage extpack install --replace ~/Oracle_VM_VirtualBox_Extension_Pack.vbox-extpack
+rm ~/Oracle_VM_VirtualBox_Extension_Pack.vbox-extpack
 
 
 
