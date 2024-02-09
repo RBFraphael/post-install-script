@@ -543,7 +543,7 @@ echo "    if [ \$1 == \"use\" ]; then" >> ~/bin/pvm
 echo "        if [ \$# -lt 2 ]; then" >> ~/bin/pvm
 echo "            echo \"You need to specify the version you want to use. To check existing versions, run 'pvm list'\"" >> ~/bin/pvm
 echo "        else" >> ~/bin/pvm
-echo "            sudo update-alternatives --set php /usr/bin/php$2" >> ~/bin/pvm
+echo "            sudo update-alternatives --set php /usr/bin/php\$2" >> ~/bin/pvm
 echo "        fi" >> ~/bin/pvm
 echo "    elif [ \$1 == \"current\" ]; then" >> ~/bin/pvm
 echo "        LINK=\`readlink -f /etc/alternatives/php\`" >> ~/bin/pvm
